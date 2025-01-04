@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  /* Custom styles for card size */
+  .card {
+    max-width: 15rem;
+    margin: auto;
+    text-align: center;
+  }
+  .container {
+    min-width: 100%;
+    padding: 0 3rem;
+  }
+</style>
+<body>
+  <div class="hero">
+    <div class="left-hero">
+      <div class="hero-txt">
+      <p class="dis">Up to <span>70%</span> Off, Folks!</p>
+      <h1>Hurry Up!</h1>
+      <p>Deal Ends Soon - Don't Miss Out</p>
+      <button>Shop Now</button>
+      </div>
+    </div>
+    <div class="right-hero">
+      <img src="https://png.pngtree.com/png-clipart/20240218/original/pngtree-man-with-shopping-bag-red-shrit-png-image_14353765.png" alt="" class="img1"> 
+      <img
+        src="https://png.pngtree.com/png-clipart/20231212/original/pngtree-guy-in-christmas-hat-and-vintage-shirt-with-shopping-bags-on-png-image_13822457.png"
+        alt="" class="img2"
+      />
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div
+      class="row row-cols-xl-6 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-2"
+    >
+      <% for (let Product of allProducts) { %>
+      <div class="col">
+        <a href="/mystore/feed/<%= Product._id %>" class="text-decoration-none">
+          <div class="card h-100 p-3">
+            <img
+              src="<%= Product.img.url %>"
+              class="card-img-top"
+              alt="<%= Product.ProductName %>"
+            />
+            <div class="card-body">
+              <h4 class="card-title"><%= Product.ProductName %></h4>
+              <span class="text-primary"
+                >&#8377;<%= Product.Price.toLocaleString('en-IN') %></span
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</body>

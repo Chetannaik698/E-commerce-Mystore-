@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+<body style="background-color: white">
+  <div class="product-container">
+    <div class="product-img">
+      <div class="all-images">
+        <div class="img">
+          <img src="<%= viewProduct.img.url %>" alt="" />
+        </div>
+        <div class="img">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHEiBI4OTw1dLI-EQDEIYSfb2FJr7xmIm58z6RxzCeqD8VfD7IxIqSl4lxifxVyvZ6AXo&usqp=CAU"
+            alt=""
+          />
+        </div>
+        <div class="img">
+          <img
+            src="https://5.imimg.com/data5/SELLER/Default/2023/5/306954987/WD/II/BU/121473521/hp-15sfq5112tu-laptop-500x500.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="img">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5V1wZGED4j2731sfTxzZ-WrXgrUQvD2A-STf7YQx3vagyYTTz3NMRgp5LQjQV7NrEzDg&usqp=CAU"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="main-img">
+        <img src="<%= viewProduct.img.url %>" alt="" />
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="card" style="width: 30rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= viewProduct.ProductName %></h5>
+          <div class="product-rating">
+            <% if (viewProduct.Rating >= 5) { %>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <% } else if (viewProduct.Rating === 4) { %>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-regular fa-star" style="color: #1e90ff"></i>
+            <% } else if (viewProduct.Rating === 3) { %>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-regular fa-star" style="color: #1e90ff"></i>
+            <i class="fa-regular fa-star" style="color: #1e90ff"></i>
+            <% } else { %>
+            <!-- Default to 3 stars if no rating is provided or if the rating is lower than 3 -->
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-solid fa-star" style="color: #1e90ff"></i>
+            <i class="fa-regular fa-star" style="color: #1e90ff"></i>
+            <i class="fa-regular fa-star" style="color: #1e90ff"></i>
+            <% } %>
+          </div>
+          <div class="product_price">
+            <span class="text-primary"
+            >&#8377;<%= viewProduct.Price.toLocaleString('en-IN') %></span
+          >
+          </div>
+          <div class="product_description">
+            <p><%= viewProduct.ProductDescription %></p>
+          </div>
+          <div class="card-btns">
+            <button class="cart">Add To cart<i class="fa-solid fa-cart-shopping"></i></button>
+            <button class="buy">Buy Now<i class="fa-solid fa-bag-shopping"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>

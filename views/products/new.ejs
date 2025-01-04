@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
+         <h2>Sell Product</h2>
+         <form action="/mystore/feed" method="POST">
+            <label for="ProductName">Product Name</label><br>
+            <input type="text" placeholder="Enter Product Name" name="ProductName" required>
+            <br><br>
+
+            <label for="ProductDescription">Product Description</label><br>
+            <textarea placeholder="Description" name="ProductDescription" required></textarea>
+            <br><br>
+
+            <label for="Price">Price</label><br>
+            <input type="number" placeholder="Price" name="Price" required>
+            <br><br>
+
+            <label for="img">Upload Image URL</label><br>
+            <input type="text" placeholder="Image URL" name="img[url]" required>
+            <br><br>
+
+            <button type="submit">Submit Product</button>
+         </form>
+    </div>
+</div>
